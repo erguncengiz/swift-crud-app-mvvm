@@ -1,0 +1,6 @@
+framework module Pods_crud_app_mvvm_crud_app_mvvmUITests {
+  umbrella header "Pods-crud-app-mvvm-crud-app-mvvmUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
