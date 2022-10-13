@@ -1,20 +1,20 @@
 import UIKit
 
 protocol HomeUIDelegate {
-    func uiDidSelect(object: Account)
+    func uiDidSelect(object: AccountModel)
 }
 
 class HomeUI : UIView {
     var delegate: HomeUIDelegate!
     
-    var object : Account?
+    var object : AccountModel?
     var cellIdentifier = "HomeCellId"
     
     lazy var tableView : UITableView = {
         let tbl = UITableView()
         tbl.delegate = self
         tbl.dataSource = self
-        tbl.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tbl.register(CustomAccountCell.self, forCellReuseIdentifier: cellIdentifier)
         tbl.translatesAutoresizingMaskIntoConstraints = false
         return tbl
     }()
@@ -57,11 +57,16 @@ extension HomeUI: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return object?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomAccountCell
+        let url = URL(string: object?[indexPath.row].avatar ?? "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg")
+        let data = try? Data(contentsOf: url!)
+        cell.userImage.image = UIImage(data: data!)
+        cell.userJobTitle.text = object?[indexPath.row].jobTitle ?? "-"
+        cell.userName.text = ("\(object?[indexPath.row].name ?? "-") \( object?[indexPath.row].surname ?? "-")")
         return cell
     }
 }

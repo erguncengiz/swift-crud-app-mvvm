@@ -6,6 +6,8 @@ target 'crud-app-mvvm' do
   use_frameworks!
 
   # Pods for crud-app-mvvm
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   target 'crud-app-mvvmTests' do
     inherit! :search_paths

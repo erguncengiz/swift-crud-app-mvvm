@@ -1,8 +1,9 @@
 import Foundation
+import Alamofire
 
 protocol HomeViewModelProtocol {
     func fetchData()
-    func didReceiveUISelect(object: Account)
+    func didReceiveUISelect(object: AccountModel)
 }
 
 class HomeViewModel {
@@ -17,7 +18,7 @@ class HomeViewModel {
         }
     }
     
-    func didReceiveUISelect(object: Account) {
+    func didReceiveUISelect(object: AccountModel) {
         debugPrint("Did receive UI object", object)
     }
 }

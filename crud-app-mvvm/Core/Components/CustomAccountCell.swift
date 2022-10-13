@@ -10,19 +10,22 @@ class CustomAccountCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        // Set any attributes of your UI components here.
-        userName.translatesAutoresizingMaskIntoConstraints = false
-        userName.font = UIFont.systemFont(ofSize: 20)
-        
+//        // Set any attributes of your UI components here.
+//        userName.translatesAutoresizingMaskIntoConstraints = false
+//        userName.font = UIFont.systemFont(ofSize: 20)
+//
         // Add the UI components
-        contentView.addSubview(userName)
+        self.addSubview(userImage)
+        self.addSubview(userName)
+        self.addSubview(userJobTitle)
+        self.addSubview(userEditButton)
         
-        NSLayoutConstraint.activate([
-            userName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            userName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
-            userName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            userName.heightAnchor.constraint(equalToConstant: 50)
-        ])
+//        NSLayoutConstraint.activate([
+//            userName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+//            userName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+//            userName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            userName.heightAnchor.constraint(equalToConstant: 50)
+//        ])
     }
     
     required init?(coder: NSCoder) {

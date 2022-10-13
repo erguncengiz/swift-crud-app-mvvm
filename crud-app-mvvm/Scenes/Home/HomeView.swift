@@ -1,7 +1,7 @@
 import UIKit
 
 protocol HomeViewProtocol {
-    func viewWillPresent(data: Account)
+    func viewWillPresent(data: AccountModel)
 }
 
 class HomeView: UIViewController, HomeViewProtocol {
@@ -19,18 +19,20 @@ class HomeView: UIViewController, HomeViewProtocol {
         viewModel.fetchData()
     }
     
+    
     override func loadView() {
         ui.delegate = self
         view = ui
     }
     
-    func viewWillPresent(data: Account) {
+    func viewWillPresent(data: AccountModel) {
         ui.object = data
+        ui.tableView.reloadData()
     }
 }
 
 extension HomeView : HomeUIDelegate {
-    func uiDidSelect(object: Account) {
+    func uiDidSelect(object: AccountModel) {
         viewModel.didReceiveUISelect(object: object)
     }
 }

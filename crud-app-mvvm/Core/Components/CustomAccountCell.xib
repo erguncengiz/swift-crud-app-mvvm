@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="AccountCell" id="iN0-l3-epB" customClass="CustomAccountCell" customModule="crud_app_mvvm" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="HomeCellId" id="iN0-l3-epB" customClass="CustomAccountCell" customModule="crud_app_mvvm" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -64,10 +64,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="userEditButton" destination="pIc-qh-XZ0" id="iBK-HF-7Ve"/>
-                <outlet property="userImage" destination="LGn-oo-Il4" id="9hK-Ih-Q5Y"/>
-                <outlet property="userJobTitle" destination="YbJ-3I-Imf" id="pbo-2a-mRh"/>
-                <outlet property="userName" destination="qB1-7p-okX" id="Ap2-EO-6RR"/>
+                <outlet property="userEditButton" destination="pIc-qh-XZ0" id="1IC-fT-atX"/>
+                <outlet property="userImage" destination="LGn-oo-Il4" id="SRy-9r-jWs"/>
+                <outlet property="userJobTitle" destination="YbJ-3I-Imf" id="brG-p2-hO5"/>
+                <outlet property="userName" destination="qB1-7p-okX" id="ACS-6s-0Mx"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="348.21428571428572"/>
         </view>
