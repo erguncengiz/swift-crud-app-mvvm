@@ -14,7 +14,8 @@ class HomeUI : UIView {
         let tbl = UITableView()
         tbl.delegate = self
         tbl.dataSource = self
-        tbl.register(CustomAccountCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        tbl.register(UINib(nibName: "CustomAccountCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tbl.translatesAutoresizingMaskIntoConstraints = false
         return tbl
     }()

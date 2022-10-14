@@ -7,28 +7,36 @@ class CustomAccountCell: UITableViewCell {
     @IBOutlet weak var userJobTitle: UILabel!
     @IBOutlet weak var userEditButton: UIButton!
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-//        // Set any attributes of your UI components here.
-//        userName.translatesAutoresizingMaskIntoConstraints = false
-//        userName.font = UIFont.systemFont(ofSize: 20)
-//
+        userImage.maskCircle(anyImage: userImage.image!)
+        
         // Add the UI components
         self.addSubview(userImage)
         self.addSubview(userName)
         self.addSubview(userJobTitle)
         self.addSubview(userEditButton)
-        
-//        NSLayoutConstraint.activate([
-//            userName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-//            userName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
-//            userName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-//            userName.heightAnchor.constraint(equalToConstant: 50)
-//        ])
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
     }
+}
+
+
+// extensions
+extension UIImageView {
+  public func maskCircle(anyImage: UIImage) {
+      self.contentMode = UIView.ContentMode.scaleAspectFill
+    self.layer.cornerRadius = self.frame.height / 2
+    self.layer.masksToBounds = false
+    self.clipsToBounds = true
+
+   // make square(* must to make circle),
+   // resize(reduce the kilobyte) and
+   // fix rotation.
+   self.image = anyImage
+  }
 }

@@ -27,7 +27,7 @@ class NetworkManager {
             parameters: NetworkManager.toParameters(model: requestModel),
             encoding: URLEncoding.default,
             headers: headers
-        ).validate().responseJSON{ response in
+        ).validate(statusCode: 200..<600).responseJSON{ response in
 
             if case .success(let value) = response.result {
                     do {
