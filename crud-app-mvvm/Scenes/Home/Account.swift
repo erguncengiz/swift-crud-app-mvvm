@@ -15,7 +15,7 @@ struct Account : Codable {
     
     func didFetch(withSuccess: @escaping didFetchSuccess, withError: @escaping didFailWithError) {
         var accountModel: AccountModel?
-            NetworkManager.instance.fetch(HTTPMethod.get, url: baseUrl, requestModel: nil, model: AccountModel.self ) { response in
+            NetworkManager.instance.fetchAccounts(HTTPMethod.get, url: baseUrl, requestModel: nil, model: AccountModel.self ) { response in
                 switch(response)
                 {
                     case .success(let model):

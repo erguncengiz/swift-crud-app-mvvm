@@ -61,13 +61,40 @@ extension HomeUI: UITableViewDataSource {
         return object?.count ?? 0
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 20
+        }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomAccountCell
         let url = URL(string: object?[indexPath.row].avatar ?? "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg")
-        let data = try? Data(contentsOf: url!)
-        cell.userImage.image = UIImage(data: data!)
+        
+        let session = URLSession(configuration: .default)
+        let dataTask = session.dataTask(with: url!) { (data, response, error) in
+            if let e = error {
+                print("Error downloading picture: \(e)")
+            } else {
+                if let res = response as? HTTPURLResponse {
+                    print("Downloaded picture with response code \(res.statusCode)")
+                    if let imageData = data {
+                        let image = UIImage(data: imageData)
+                        DispatchQueue.main.async {
+                            cell.userImage.image = image
+                        }
+                    } else {
+                        print("Couldn't get image: Image is nil")
+                    }
+                } else {
+                    print("Couldn't get response code for some reason")
+                }
+            }
+        }
+        dataTask.resume()
+        //
         cell.userJobTitle.text = object?[indexPath.row].jobTitle ?? "-"
         cell.userName.text = ("\(object?[indexPath.row].name ?? "-") \( object?[indexPath.row].surname ?? "-")")
+        cell.userImage.contentMode = ContentMode.scaleToFill
+        cell.userImage.makeCircleImage()
         return cell
     }
 }

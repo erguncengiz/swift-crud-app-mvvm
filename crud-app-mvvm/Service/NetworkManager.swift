@@ -12,14 +12,14 @@ import SwiftyJSON
 class NetworkManager {
     
     static let instance = NetworkManager()
+    private init(){}
 
     let headers : HTTPHeaders = [
         "Accept": "*/*",
         "User-Agent": "Mozilla/5.0 (compatible; Rigor/1.0.0; http://rigor.com)"
     ]
 
-
-    public func fetch<T:Codable> (_ method: HTTPMethod, url: String, requestModel: T?, model: T.Type, completion: @escaping (AFResult<Codable>) -> Void)
+    public func fetchAccounts<T:Codable> (_ method: HTTPMethod, url: String, requestModel: T?, model: T.Type, completion: @escaping (AFResult<Codable>) -> Void)
     {
         AF.request(
             url,

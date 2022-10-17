@@ -140,7 +140,7 @@
 		9B3E616928F0464E0057D893 /* crud-app-mvvm */ = {
 			isa = PBXGroup;
 			children = (
-				9BD7282E28F82540004A47AB /* Data */,
+				9BD7282E28F82540004A47AB /* Service */,
 				9B96946428F0741B006DC6C2 /* Core */,
 				9B3E619A28F046B80057D893 /* Scenes */,
 				9B3E616A28F0464E0057D893 /* AppDelegate.swift */,
@@ -207,20 +207,12 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		9BD7282E28F82540004A47AB /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				9BD7282F28F82549004A47AB /* Network */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		9BD7282F28F82549004A47AB /* Network */ = {
+		9BD7282E28F82540004A47AB /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				9BD7283028F82F96004A47AB /* NetworkManager.swift */,
 			);
-			path = Network;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D869867FBA624094FA790E4B /* Pods */ = {

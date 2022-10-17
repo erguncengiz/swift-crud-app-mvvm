@@ -11,8 +11,6 @@ class CustomAccountCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        userImage.maskCircle(anyImage: userImage.image!)
-        
         // Add the UI components
         self.addSubview(userImage)
         self.addSubview(userName)
@@ -26,17 +24,14 @@ class CustomAccountCell: UITableViewCell {
 }
 
 
-// extensions
+//CARRY THIS CODE OUT OF HERE
 extension UIImageView {
-  public func maskCircle(anyImage: UIImage) {
-      self.contentMode = UIView.ContentMode.scaleAspectFill
-    self.layer.cornerRadius = self.frame.height / 2
-    self.layer.masksToBounds = false
-    self.clipsToBounds = true
-
-   // make square(* must to make circle),
-   // resize(reduce the kilobyte) and
-   // fix rotation.
-   self.image = anyImage
-  }
+    
+    func makeCircleImage() {
+        
+        layer.borderWidth = 0
+        layer.masksToBounds = false
+        layer.cornerRadius = self.frame.height / 2
+        clipsToBounds = true
+    }
 }
