@@ -1,7 +1,11 @@
 import UIKit
+import Alamofire
 
 class CustomAccountCell: UITableViewCell {
 
+    var accountId: String!
+    var indexOfUser: Int!
+    var delegate : HomeUIDelegate?
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userJobTitle: UILabel!
@@ -21,17 +25,19 @@ class CustomAccountCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
     }
-}
-
-
-//CARRY THIS CODE OUT OF HERE
-extension UIImageView {
     
-    func makeCircleImage() {
-        
-        layer.borderWidth = 0
-        layer.masksToBounds = false
-        layer.cornerRadius = self.frame.height / 2
-        clipsToBounds = true
+    @IBAction func deleteDidTap(_ sender: UIButton) {
+        //TODO: user preloader when user tried to delete!
+        self.delegate?.deleteDidTapped(indexOfAccount: self.indexOfUser)
+        NetworkManager.instance.request(HTTPMethod.delete, url: Endpoints.delete.baseUrl(id: accountId ?? "0"), requestModel: nil, model: Account.self) { response in
+            switch(response)
+            {
+            case .success(_):
+                print("User deleted successfully!")
+                //
+            case .failure(_):
+                print("Error while deleting user!")
+            }
+        }
     }
 }

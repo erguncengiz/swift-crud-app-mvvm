@@ -6,6 +6,7 @@ protocol HomeViewProtocol {
 
 class HomeView: UIViewController, HomeViewProtocol {
     
+    @IBOutlet weak var addAccountButton: UIBarButtonItem!
     private var ui = HomeUI()
     var viewModel : HomeViewModel! {
         willSet {
@@ -29,9 +30,19 @@ class HomeView: UIViewController, HomeViewProtocol {
         ui.object = data
         ui.tableView.reloadData()
     }
+
+    @IBAction func addAccountDidTapped(_ sender: Any) {
+        //
+    }
 }
 
 extension HomeView : HomeUIDelegate {
+
+    func deleteDidTapped(indexOfAccount: Int) {
+        ui.object?.remove(at: indexOfAccount)
+        ui.tableView.deleteRows(at: [IndexPath(row: indexOfAccount, section: 0)], with: .fade)
+    }
+    
     func uiDidSelect(object: AccountModel) {
         viewModel.didReceiveUISelect(object: object)
     }

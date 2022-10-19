@@ -19,7 +19,8 @@ class NetworkManager {
         "User-Agent": "Mozilla/5.0 (compatible; Rigor/1.0.0; http://rigor.com)"
     ]
 
-    public func fetchAccounts<T:Codable> (_ method: HTTPMethod, url: String, requestModel: T?, model: T.Type, completion: @escaping (AFResult<Codable>) -> Void)
+
+    public func request<T:Codable> (_ method: HTTPMethod, url: String, requestModel: T?, model: T.Type, completion: @escaping (AFResult<Codable>) -> Void)
     {
         AF.request(
             url,

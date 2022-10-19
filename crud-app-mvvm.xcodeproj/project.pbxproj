@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2179C51103D225F96CC2B65F /* Pods_crud_app_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D06F5A0A3CDA00BC76533CA /* Pods_crud_app_mvvm.framework */; };
 		4ED06537114C28E3B3D921D4 /* Pods_crud_app_mvvm_crud_app_mvvmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3155E0F3F10AACFE05F6F263 /* Pods_crud_app_mvvm_crud_app_mvvmUITests.framework */; };
+		9B294DBB28FFEEF100B44E35 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B294DBA28FFEEF100B44E35 /* UIImageViewExtensions.swift */; };
+		9B294DBE28FFF3E500B44E35 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B294DBD28FFF3E500B44E35 /* Endpoints.swift */; };
 		9B3E616B28F0464E0057D893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E616A28F0464E0057D893 /* AppDelegate.swift */; };
 		9B3E616F28F0464E0057D893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E616E28F0464E0057D893 /* ViewController.swift */; };
 		9B3E617228F0464F0057D893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3E617028F0464F0057D893 /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		5491919E1AA9271621648C17 /* Pods-crud-app-mvvm-crud-app-mvvmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crud-app-mvvm-crud-app-mvvmUITests.release.xcconfig"; path = "Target Support Files/Pods-crud-app-mvvm-crud-app-mvvmUITests/Pods-crud-app-mvvm-crud-app-mvvmUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D06F5A0A3CDA00BC76533CA /* Pods_crud_app_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crud_app_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		915510D95954F63ACBC3B244 /* Pods-crud-app-mvvmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crud-app-mvvmTests.debug.xcconfig"; path = "Target Support Files/Pods-crud-app-mvvmTests/Pods-crud-app-mvvmTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B294DBA28FFEEF100B44E35 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		9B294DBD28FFF3E500B44E35 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		9B3E616728F0464E0057D893 /* crud-app-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crud-app-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3E616A28F0464E0057D893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3E616E28F0464E0057D893 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,22 @@
 				059E8BFB8060C0AE8F023E53 /* Pods_crud_app_mvvmTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B294DB928FFEEC100B44E35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B294DBA28FFEEF100B44E35 /* UIImageViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B294DBC28FFF3D500B44E35 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9B294DBD28FFF3E500B44E35 /* Endpoints.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		9B3E615E28F0464E0057D893 = {
@@ -193,6 +213,8 @@
 		9B96946428F0741B006DC6C2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9B294DBC28FFF3D500B44E35 /* Enums */,
+				9B294DB928FFEEC100B44E35 /* Extensions */,
 				9B96946528F07429006DC6C2 /* Components */,
 			);
 			path = Core;
@@ -473,6 +495,8 @@
 				9B3E619F28F046D50057D893 /* HomeView.swift in Sources */,
 				9B3E616B28F0464E0057D893 /* AppDelegate.swift in Sources */,
 				9B96946728F0743B006DC6C2 /* CustomAccountCell.swift in Sources */,
+				9B294DBB28FFEEF100B44E35 /* UIImageViewExtensions.swift in Sources */,
+				9B294DBE28FFF3E500B44E35 /* Endpoints.swift in Sources */,
 				9BD7283128F82F96004A47AB /* NetworkManager.swift in Sources */,
 				9B3E61A028F046D50057D893 /* HomeViewModel.swift in Sources */,
 				9B3E61A128F046D50057D893 /* Account.swift in Sources */,
